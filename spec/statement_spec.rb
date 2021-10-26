@@ -1,9 +1,10 @@
+# frozen_string_literal: true
+
 require 'statement'
 
 MOCK_HEADER = "date || credit || debit || balance\n"
 
 describe Statement do
-
   it 'saves the date of when a transaction was made' do
     statement = Statement.new
     timestamp = Time.now.strftime('%d/%m/%Y')
@@ -16,5 +17,4 @@ describe Statement do
       expect(statement.display_header).to eq(MOCK_HEADER)
     end
   end
-
 end
