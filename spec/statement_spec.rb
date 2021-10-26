@@ -13,10 +13,8 @@ describe Statement do
   describe 'display' do
     it 'should display the bank statement header' do
       statement = Statement.new
-      expect { statement.display }.to output(MOCK_HEADER).to_stdout
+      expect(statement.display_header).to eq(MOCK_HEADER)
     end
   end
 
-
-  
 end

@@ -50,4 +50,10 @@ describe Account do
     end
   end
 
+    it 'prints the bank statement' do
+      account = Account.new
+      account.deposit(1000)
+      expect { account.print_statement }.to output("date || credit || debit || balance\n26/10/2021 || 1000 ||  || 1000\n").to_stdout
+    end
+
 end

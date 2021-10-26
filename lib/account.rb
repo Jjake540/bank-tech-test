@@ -12,14 +12,21 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions.push({"debit" => '   ', "credit" => amount, "balance" => @balance, "date" => date})
+    @transactions.push({"date" => date, "credit" => amount, "debit" => '', "balance" => @balance})
   end
 
   def withdraw(amount)
     @balance -= amount
-    @transactions.push({"debit" => amount, "credit" => '   ', "balance" => @balance, "date" => date})
+    @transactions.push({"date" => date, "credit" => '', "debit" => amount, "balance" => @balance})
   end
 
+  def print_statement
+    print Statement.new.display_header
+    @transactions.reverse_each do |display|
+      print "#{display["date"]} || #{display["credit"]} || #{display["debit"]} || #{display["balance"]}\n" 
+    end
+  end
+    
 private
 
   def date

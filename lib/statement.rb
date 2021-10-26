@@ -6,8 +6,8 @@ class Statement
     Time.now.strftime("%d/%m/%Y")
   end
 
-  def display
-    print HEADER
+  def display_header
+    HEADER
   end
 
 end
