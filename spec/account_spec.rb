@@ -50,10 +50,24 @@ describe Account do
     end
   end
 
+  describe 'print statement' do
     it 'prints the bank statement' do
       account = Account.new
       account.deposit(1000)
       expect { account.print_statement }.to output("date || credit || debit || balance\n26/10/2021 || 1000 ||  || 1000\n").to_stdout
     end
+  end
+  
+  describe 'edge cases' do
+    it 'raises an error if deposit isnt a positive number' do
+      expect { subject.deposit(-1) }.to raise_error "Invalid input!"
+      expect { subject.deposit("Hello World") }.to raise_error "Invalid input!"
+    end
+
+    it 'raises an error if not enough funds in the account' do
+      expect { subject.withdraw(25) }.to raise_error "Insufficient funds!"
+    end
+  end
+  
 
 end
