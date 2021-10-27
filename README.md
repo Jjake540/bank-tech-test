@@ -1,14 +1,28 @@
 # Bank tech test
+ 
+I used TTD to build this program after working out what functions I felt would be needed. Also ran many feature tests in irb to make sure everything was worknig correctly. I decided to store the information in an array of hashes so if needed more information could added to the program.
 
-Today, you'll practice doing a tech test.
+### setup
+* Clone this repo
+* bundle install
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+### running tests
+* run % rspec
+* run % rubocop
 
-You'll get to practice your OO design and TDD skills.
+### How to use
+* require './lib/account.rb'
+* account = Account.new
+* account.depost(100)
+* account.withdraw(50)
+* account.print_statement
+```
+.0.0 :005 > account.print_statement
+date || credit || debit || balance
+27/10/2021 ||  || 50 || 50
+27/10/2021 || 100 ||  || 100
+```
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
-
-## Specification
 
 ### Requirements
 

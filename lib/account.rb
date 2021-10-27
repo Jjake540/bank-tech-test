@@ -20,7 +20,7 @@ class Account
 
   def withdraw(amount)
     raise 'Invalid input!' if invalid_input(amount)
-    raise 'Insufficient funds!' if @balance < amount
+    raise 'Insufficient funds!' if amount > @balance
 
     @balance -= amount
     @transactions.push({ 'date' => date, 'credit' => '', 'debit' => amount, 'balance' => @balance })

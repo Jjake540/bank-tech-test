@@ -60,6 +60,11 @@ describe Account do
   end
   
   describe 'edge cases' do
+    it 'raises an error if not enough funds in the account' do
+      account = Account.new
+      expect { account.withdraw(20) }.to raise_error('Insufficient funds!')
+    end
+
     it 'raises an error if deposit isnt a positive number' do
       expect { subject.deposit(-1) }.to raise_error('Invalid input!')
       expect { subject.deposit('Hello World') }.to raise_error('Invalid input!')
@@ -70,12 +75,6 @@ describe Account do
       account.deposit(100)
       expect { account.withdraw(-10) }.to raise_error('Invalid input!')
       expect { account.withdraw('Hello World') }.to raise_error('Invalid input!')
-    end
-
-    it 'raises an error if not enough funds in the account' do
-      account = Account.new
-      account.deposit(10)
-      expect { account.withdraw(20) }.to raise_error('Insufficient funds!')
     end
   end
 end
