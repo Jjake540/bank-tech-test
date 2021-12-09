@@ -1,6 +1,6 @@
 # Bank tech test
  
-I used TTD to build this program after working out what functions I felt would be needed. Also ran many feature tests in irb to make sure everything was worknig correctly. I decided to store the information in an array of hashes so if needed more information could added to the program.
+I used TDD to build this program after working out what functions I felt would be needed. Also ran many feature tests in IRB to make sure everything was working correctly. I decided to store the information in an array of hashes so if needed more information could be added to the program.
 
 ### setup
 * Clone this repo
@@ -26,14 +26,14 @@ date || credit || debit || balance
 
 ### Requirements
 
-* You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command line interface that takes input from STDIN.)
+* You should be able to interact with your code via a REPL like IRB or the JavaScript console. (You don't need to implement a command-line interface that takes input from STDIN.)
 * Deposits, withdrawal.
 * Account statement (date, amount, balance) printing.
-* Data can be kept in memory (it doesn't need to be stored to a database or anything).
+* Data can be kept in memory (it doesn't need to be stored in a database or anything).
 
 ### Acceptance criteria
 
-**Given** a client makes a deposit of 1000 on 10-01-2023  
+**Given** a client deposits 1000 on 10-01-2023  
 **And** a deposit of 2000 on 13-01-2023  
 **And** a withdrawal of 500 on 14-01-2023  
 **When** she prints her bank statement  
