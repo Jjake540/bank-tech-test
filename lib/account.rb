@@ -4,11 +4,12 @@ require_relative 'statement'
 
 # main account class
 class Account
-  attr_reader :balance, :transactions
+  attr_reader :balance, :transactions, :statement
 
   def initialize
     @balance = 0
     @transactions = []
+    @statement = Statement.new
   end
 
   def deposit(amount)
@@ -27,7 +28,7 @@ class Account
   end
 
   def print_statement
-    print Statement.new.display_header
+    print @statement.display_header
     @transactions.reverse_each do |display|
       print "#{display['date']} || #{display['credit']} || #{display['debit']} || #{display['balance']}\n"
     end
@@ -40,6 +41,6 @@ class Account
   end
 
   def date
-    Statement.new.timestamp
+    @statement.timestamp
   end
 end
