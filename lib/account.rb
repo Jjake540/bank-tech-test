@@ -16,7 +16,7 @@ class Account
     raise 'Invalid input!' if invalid_input(amount)
 
     @balance += amount
-    @transactions.push({ 'date' => date, 'credit' => amount, 'debit' => '', 'balance' => @balance })
+    @transactions.push({ 'date' => date, 'credit' => amount, 'balance' => @balance })
   end
 
   def withdraw(amount)
@@ -24,13 +24,13 @@ class Account
     raise 'Insufficient funds!' if amount > @balance
 
     @balance -= amount
-    @transactions.push({ 'date' => date, 'credit' => '', 'debit' => amount, 'balance' => @balance })
+    @transactions.push({ 'date' => date, 'debit' => amount, 'balance' => @balance })
   end
 
   def print_statement
     print @statement.display_header
     @transactions.reverse_each do |display|
-      print "#{display['date']} || #{display['credit']} || #{display['debit']} || #{display['balance']}\n"
+      print "#{display['date']} || #{format_number(display['credit'])} || #{format_number(display['debit'])} || #{format_number(display['balance'])}\n"
     end
   end
 
@@ -42,5 +42,11 @@ class Account
 
   def date
     @statement.timestamp
+  end
+
+  def format_number(number)
+    return '' if number.nil?
+
+    format('%.2f', number.to_f)
   end
 end

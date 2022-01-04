@@ -49,7 +49,7 @@ describe Account do
       account.deposit(1000)
       expect { account.print_statement }
         .to output(
-          "date || credit || debit || balance\n#{date} || 1000 ||  || 1000\n"
+          "date || credit || debit || balance\n#{date} || 1000.00 ||  || 1000.00\n"
         ).to_stdout
     end
   end
