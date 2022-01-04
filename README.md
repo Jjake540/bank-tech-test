@@ -16,13 +16,9 @@ I used TDD to build this program after working out what functions I felt would b
 * account.depost(100)
 * account.withdraw(50)
 * account.print_statement
-```
-.0.0 :005 > account.print_statement
-date || credit || debit || balance
-27/10/2021 ||  || 50 || 50
-27/10/2021 || 100 ||  || 100
-```
 
+### Example Usage
+<img width="1198" alt="Bank-tech-test" src="https://user-images.githubusercontent.com/77396594/148058899-119b7ab2-8182-462a-815a-e225f51cc9e3.png">
 
 ### Requirements
 
